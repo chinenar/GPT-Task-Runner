@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Task Runner",
+  "version": "0.1.0",
+  "description": "รัน prompt เป็นคิวทีละบรรทัดใน ChatGPT",
+  "permissions": ["activeTab", "tabs", "storage", "scripting"],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*"          
+  ],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup/popup.html" },
+  "content_scripts": [{
+    "matches": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*"
+    ],
+    "js": ["content.js"]
+  }]
+}
