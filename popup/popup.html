@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+  <title>GPT Task Runner</title>
+</head>
+  <!-- เพิ่ม Reload Button -->
+  <!-- START OF FILE popup.html (อัปเดต Layout) -->
+<body>
+  <div id="header-bar">
+    <h2>Task</h2>
+    <button id="reloadBtn" title="Reload">↻</button>
+  </div>
+
+  <textarea id="taskInput" placeholder="วางข้อความ แล้วกด Enter เพื่อเพิ่ม"></textarea>
+  <div id="export-controls" style="display: flex; align-items: center; gap: 8px; margin: 8px 0 0 0;">
+    <label style="font-size: 0.95em; display: flex; align-items: center; gap: 4px;">
+      <input type="checkbox" id="autoExportChk">
+      Export อัตโนมัติหลังแต่ละ task
+    </label>
+    <button id="forceStopBtn" title="Force Stop" style="width:24px; height:24px; border-radius:50%; background:#dc3545; color:#fff; border:none; display:inline-flex; align-items:center; justify-content:center; font-size:1em; padding:0; margin-left:auto;">⛔</button>
+    <span id="sendDelayCountdown" class="send-delay-countdown"></span>
+  </div>
+  <ul id="taskList"></ul>
+
+  <!-- ★★★ ใช้ Layout แบบ Grid ใหม่ ★★★ -->
+  <div class="button-grid">
+    <button id="clearBtn">🧹 Clear</button>
+    <button id="retryBtn">🔁 Retry</button>
+    <button id="saveBtn">💾 Save Album</button>
+    <button id="manageBtn">🗂️ Manage</button>
+    <button id="stopContinueBtn">⏸️ Stop</button> 
+    <button id="exportBtn" title="ดาวน์โหลดบทสนทนาปัจจุบัน">📄 Export Chat</button>
+    <button id="runBtn">RUN 🚀</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+<style>
+  .send-delay-countdown {
+    margin-left: 12px;
+    min-width: 70px;
+    color: #111 !important;
+    background: #fff !important;
+    border-radius: 10px;
+    padding: 4px 10px;
+    font-size: 1.18em;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    border: 1.5px solid #e0e0e0;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+  }
+  @media (prefers-color-scheme: dark) {
+    .send-delay-countdown {
+      background: #ffe066;
+      color: #222;
+    }
+  }
+</style>
+</html>
